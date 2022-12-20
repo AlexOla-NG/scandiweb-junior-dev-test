@@ -1,0 +1,18 @@
+.dashboard-wrapper {
+  @include flex-center-between;
+  flex-wrap: wrap;
+  padding-bottom: 0.4rem;
+
+  h1 {
+    white-space: nowrap;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  hr {
+    width: 100%;
+  }
+}
