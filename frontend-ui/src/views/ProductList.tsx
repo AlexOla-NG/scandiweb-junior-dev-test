@@ -1,5 +1,5 @@
 import React from "react";
-import HomeDashboard from "../components/HomeDashboard";
+import HomeDashboard from "../components/dashboards/HomeDashboard";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import { productListData } from "./mocks/mock";
 

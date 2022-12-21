@@ -1,4 +1,4 @@
-@import 'resets', 'variables', 'config', 'dashboard';
+@import 'resets', 'variables', 'config', 'dashboard', 'single-product';
 
 body {
   background-color: $secondary-color;
@@ -12,11 +12,38 @@ body {
 .btn {
   background: inherit;
   border: 1px solid $primary-color;
-  border-radius: 2px;
+  border-radius: radius(regular);
   box-shadow: 3px 3px 0px $primary-color;
   font-family: inherit;
   font-size: size(fs-btn);
   font-weight: weight(medium);
   padding: 0.2rem 0.5rem;
   text-transform: uppercase;
+}
+
+.product-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0 2rem;
+}
+
+// TODO: stopped here
+// footer should be fixed at the bottom of content on small screens, & at the bottom of screen on big screens
+
+
+footer {
+  position: fixed;
+  left: 2rem;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  hr {
+    width: 92%;
+  }
+
+  h6 {
+    padding: 1rem 0;
+  }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { ISingleProduct } from "./ISingleProduct";
 
 // TODO: stopped here
-// style singleProduct
 // fix the checkbox logic. toggling should affect the main database
 
 const SingleProduct = ({

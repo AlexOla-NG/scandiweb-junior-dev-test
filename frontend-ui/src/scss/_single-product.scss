@@ -1,0 +1,14 @@
+.single-product-wrapper {
+  border: 1px solid $primary-color;
+  border-radius: radius(regular);
+  padding: 1.5rem 1rem 3rem;
+  position: relative;
+  text-align: center;
+  width: clamp(210px, 10rem, 20rem);
+
+  .delete-checkbox {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}
