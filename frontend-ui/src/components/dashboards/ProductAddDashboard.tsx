@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 // TODO: add logic to mass delete btn
 
-const HomeDashboard = () => {
+const ProductAddDashboard = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("addproduct");
+    navigate("/");
   };
 
   return (
     <header>
       <div className="dashboard-wrapper">
-        <h1>Product List</h1>
+        <h1>Product Add</h1>
         <div className="btn-wrapper">
           <button className="btn" onClick={handleClick}>
-            ADD
+            Save
           </button>
-          <button className="btn" id="delete-product-btn">
-            MASS DELETE
+          <button className="btn" onClick={handleClick}>
+            Cancel
           </button>
         </div>
       </div>
@@ -28,4 +28,4 @@ const HomeDashboard = () => {
   );
 };
 
-export default HomeDashboard;
+export default ProductAddDashboard;

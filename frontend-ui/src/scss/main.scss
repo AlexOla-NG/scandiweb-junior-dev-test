@@ -1,4 +1,4 @@
-@import 'resets', 'variables', 'config', 'dashboard', 'single-product';
+@import 'resets', 'variables', 'config', 'dashboard', 'single-product', 'form', 'footer', 'responsiveness';
 
 body {
   background-color: $secondary-color;
@@ -6,7 +6,7 @@ body {
   font-family: 'Comic Neue', cursive;
   font-size: 16px;
   font-weight: weight(regular);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem 0;
 }
 
 .btn {
@@ -18,32 +18,14 @@ body {
   font-size: size(fs-btn);
   font-weight: weight(medium);
   padding: 0.2rem 0.5rem;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 .product-wrapper {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 2rem;
   padding: 1.5rem 0 2rem;
-}
-
-// TODO: stopped here
-// footer should be fixed at the bottom of content on small screens, & at the bottom of screen on big screens
-
-
-footer {
-  position: fixed;
-  left: 2rem;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-
-  hr {
-    width: 92%;
-  }
-
-  h6 {
-    padding: 1rem 0;
-  }
 }
