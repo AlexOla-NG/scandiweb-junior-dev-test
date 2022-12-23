@@ -39,15 +39,42 @@
   left: 1rem;
 }
 
-form {
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 0 2rem;
+}
+.form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.form input,
+.form select,
+.form option {
+  background-color: inherit;
+  border: 1px solid hsl(0deg, 0%, 7%);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 0.2rem 0.5rem;
+}
+.form input:focus,
+.form select:focus,
+.form option:focus {
+  outline: none;
+}
+.form .type-output {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-form label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.form .type-output p {
+  font-size: 0.7rem;
 }
 
 footer {

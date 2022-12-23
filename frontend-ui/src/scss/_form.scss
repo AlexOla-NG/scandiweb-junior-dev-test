@@ -1,11 +1,42 @@
-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1.5rem 0 2rem;
 
   label {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: size(fs-p);
+    font-weight: weight(medium);
+  }
+
+  input,
+  select,
+  option {
+    background-color: inherit;
+    border: 1px solid $primary-color;
+    border-radius: radius(regular);
+    font-family: inherit;
+    font-size: size(fs-p);
+    font-weight: weight(regular);
+    padding: 0.2rem 0.5rem;
+  }
+
+  input:focus,
+  select:focus,
+  option:focus {
+    outline: none;
+  }
+
+  .type-output {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+      font-size: size(fs-caption);
+    }
   }
 }

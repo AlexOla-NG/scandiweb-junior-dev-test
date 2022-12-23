@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ISubmit } from "../form/IForm";
 
 // TODO: add logic to mass delete btn
 
-const ProductAddDashboard = () => {
+const ProductAddDashboard = ({ submit }: ISubmit) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/");
+    submit();
+    // navigate("/");
   };
 
   return (
