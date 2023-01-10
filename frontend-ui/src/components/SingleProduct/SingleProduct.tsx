@@ -3,6 +3,7 @@ import { ISingleProduct } from "./ISingleProduct";
 
 // TODO: stopped here
 // fix the checkbox logic. toggling should affect the main database
+// this depends on backend completion
 
 const SingleProduct = ({
   sku,
@@ -12,6 +13,7 @@ const SingleProduct = ({
   unit,
   checked,
 }: ISingleProduct) => {
+  // STUB: toggle output based on unit
   let output;
 
   if (unit === "cm") {
@@ -22,6 +24,12 @@ const SingleProduct = ({
     output = "Size";
   }
 
+  // STUB: conditionally append isDVD if item is DVD
+  let isDVD;
+  if (unit === "mb") {
+    isDVD = "DISC";
+  }
+
   return (
     <div className="single-product-wrapper">
       <input
@@ -30,10 +38,12 @@ const SingleProduct = ({
         defaultChecked={checked}
       />
       <p>{sku}</p>
-      <p>{name}</p>
-      <p>{price} $</p>
       <p>
-        {output}: {dimension} {unit}
+        {name} {isDVD}
+      </p>
+      <p>{price.toFixed(2)} $</p>
+      <p>
+        {output}: {dimension} <span>{unit}</span>
       </p>
     </div>
   );

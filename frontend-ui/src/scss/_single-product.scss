@@ -11,4 +11,13 @@
     top: 1rem;
     left: 1rem;
   }
+
+  p {
+    text-transform: capitalize;
+  }
+
+  p:first-of-type,
+  p span {
+    text-transform: uppercase;
+  }
 }

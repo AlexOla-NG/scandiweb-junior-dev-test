@@ -2,12 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 // TODO: add logic to mass delete btn
+// logic will depend on data from backend
+// complete when backend is finished
 
 const HomeDashboard = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("addproduct");
+    navigate("add-product");
   };
 
   return (

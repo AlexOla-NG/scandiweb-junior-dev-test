@@ -1,6 +1,7 @@
 .dashboard-wrapper {
   @include flex-center-between;
   flex-wrap: wrap;
+  gap: 1rem;
   padding-bottom: 0.4rem;
 
   h1 {
