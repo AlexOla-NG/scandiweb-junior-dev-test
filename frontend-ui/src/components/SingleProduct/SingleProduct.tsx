@@ -41,7 +41,8 @@ const SingleProduct = ({
       <p>
         {name} {isDVD}
       </p>
-      <p>{price.toFixed(2)} $</p>
+      <p>{price}.00 $</p>
+      {/* <p>{price.toFixed(2)} $</p> */}
       <p>
         {output}: {dimension} <span>{unit}</span>
       </p>

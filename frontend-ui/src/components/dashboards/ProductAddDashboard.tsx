@@ -11,7 +11,7 @@ const ProductAddDashboard = () => {
       return;
     }
 
-    navigate("/");
+    // navigate("/");
   };
 
   const handleCancel = () => {

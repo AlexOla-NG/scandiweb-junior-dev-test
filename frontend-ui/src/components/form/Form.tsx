@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const CATEGORIES: string[] = ["DVD", "Furniture", "Book"];
 
@@ -7,6 +9,7 @@ type formDataObj = {
 };
 
 const Form = () => {
+  const navigate = useNavigate();
   const [category, setCategory] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -25,6 +28,19 @@ const Form = () => {
     myFormData.forEach((value, key) => (formDataObj[key] = value));
 
     console.log(formDataObj);
+
+    const url = "http://localhost/react-backend/index.php";
+    axios
+      .post(url, myFormData)
+      .then((res) => {
+        // STUB: if sku exists, popup alert; else navigate to home page
+        if (res.data) {
+          alert(res.data);
+        } else {
+          navigate("/");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   // STUB: create custom error message on invalid input
@@ -62,7 +78,7 @@ const Form = () => {
     output = (
       <div className="type-output">
         <label htmlFor="weight">
-          Weight (KG) <input type="number" name="wieght" id="weight" required />
+          Weight (KG) <input type="number" name="weight" id="weight" required />
         </label>
         <p>Please provide weight in Kilograms</p>
       </div>
