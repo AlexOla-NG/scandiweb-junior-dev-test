@@ -1,5 +1,5 @@
 export type ISingleProduct = {
-  id?: string;
+  id: number;
   sku: string;
   name: string;
   price: number;

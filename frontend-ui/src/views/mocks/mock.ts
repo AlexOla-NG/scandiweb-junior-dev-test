@@ -2,7 +2,7 @@ import { ISingleProduct } from "../../components/SingleProduct/ISingleProduct";
 
 const productListData: ISingleProduct[] = [
   {
-    id: "001",
+    id: 1,
     sku: "ttw001",
     name: "chair",
     price: 23.0,
@@ -11,7 +11,7 @@ const productListData: ISingleProduct[] = [
     checked: false,
   },
   {
-    id: "002",
+    id: 2,
     sku: "ttw002",
     name: "god of war",
     price: 69.0,
@@ -20,7 +20,7 @@ const productListData: ISingleProduct[] = [
     checked: false,
   },
   {
-    id: "003",
+    id: 3,
     sku: "ttw003",
     name: "lord of the flies",
     price: 123.0,
@@ -29,7 +29,7 @@ const productListData: ISingleProduct[] = [
     checked: false,
   },
   {
-    id: "004",
+    id: 4,
     sku: "ttw004",
     name: "table",
     price: 29.99,

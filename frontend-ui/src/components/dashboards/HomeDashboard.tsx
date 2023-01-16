@@ -5,11 +5,19 @@ import { useNavigate } from "react-router-dom";
 // logic will depend on data from backend
 // complete when backend is finished
 
-const HomeDashboard = () => {
+interface IHomeDashboard {
+  deleteUsers(): void;
+}
+
+const HomeDashboard = ({ deleteUsers }: IHomeDashboard) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("add-product");
+  };
+
+  const handleDelete = () => {
+    deleteUsers();
   };
 
   return (
@@ -20,7 +28,11 @@ const HomeDashboard = () => {
           <button className="btn" onClick={handleClick}>
             ADD
           </button>
-          <button className="btn" id="delete-product-btn">
+          <button
+            className="btn"
+            id="delete-product-btn"
+            onClick={handleDelete}
+          >
             MASS DELETE
           </button>
         </div>

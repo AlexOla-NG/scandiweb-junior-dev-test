@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { ISingleProduct } from "./ISingleProduct";
 
 // TODO: stopped here
 // fix the checkbox logic. toggling should affect the main database
 // this depends on backend completion
 
+interface ISingleProductComp extends ISingleProduct {
+  handleToggle(id: number): void;
+}
+
 const SingleProduct = ({
+  id,
   sku,
   name,
   price,
   dimension,
   unit,
   checked,
-}: ISingleProduct) => {
-  const [isChecked, setIsChecked] = useState(checked);
-
+  handleToggle,
+}: ISingleProductComp) => {
   const handleChange = () => {
-    setIsChecked(!isChecked);
+    handleToggle(id);
   };
 
   // STUB: toggle output based on unit
@@ -41,7 +45,7 @@ const SingleProduct = ({
       <input
         type="checkbox"
         className="delete-checkbox"
-        checked={isChecked}
+        defaultChecked={checked}
         onChange={handleChange}
       />
       <p>{sku}</p>

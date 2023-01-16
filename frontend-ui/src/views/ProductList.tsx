@@ -6,29 +6,63 @@ import SingleProduct from "../components/SingleProduct/SingleProduct";
 // import { productListData } from "./mocks/mock";
 
 // TODO: stopped here
-// add logic to mass delete btn
+// fix deleteUsers logic
 
 const ProductList = () => {
   const [productList, setProductList] = useState<ISingleProduct[]>([]);
+  // const [error, setError] = useState<string>("");
 
   useEffect(() => {
     const url = "http://localhost/react-backend/api.php";
 
     axios
       .get(url)
-      .then((res) => setProductList(res.data))
-      .catch((err) => console.log(err));
-  }, [productList]);
+      .then((res) => {
+        setProductList(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  const deleteUsers = () => {};
+  // STUB: mass delete btn logic
+  // filter out unchecked products, set as new productList state
+  const deleteUsers = () => {
+    const bools = [false, true];
+    let newProductList = productList.filter(
+      (product) => product.checked === bools[0]
+    );
+
+    console.log(newProductList);
+
+    // setProductList(newProductList);
+  };
+
+  // STUB: toggle user checked prop
+  const toggleChecked = (id: number) => {
+    let newProductList = productList.map((product) => {
+      if (product.id === id) {
+        return { ...product, checked: !product.checked };
+      }
+
+      return product;
+    });
+    setProductList(newProductList);
+  };
 
   return (
     <div>
-      <HomeDashboard />
+      <HomeDashboard deleteUsers={deleteUsers} />
       <main className="product-wrapper">
         {productList.length > 0 &&
           productList.map((product) => {
-            return <SingleProduct key={product.id} {...product} />;
+            return (
+              <SingleProduct
+                key={product.id}
+                handleToggle={toggleChecked}
+                {...product}
+              />
+            );
           })}
       </main>
     </div>
