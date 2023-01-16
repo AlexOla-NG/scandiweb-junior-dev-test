@@ -2,30 +2,37 @@
 
 // NOTE: API endpoint for frontend
 
-// TODO: stopped here
-// fix error with checked column being converted to string when json_encode is called on $response
-
 // STUB: create sql connection params
 $serverName = "localhost";
 $username = "root";
 $password = "";
 $databaseName = "scandiweb_backend";
+$dsn = 'mysql:dbname=scandiweb_backend;host=localhost';
 
-$con = mysqli_connect($serverName, $username, $password, $databaseName);
 $response = array();
 
-if ($con) {
+// STUB: create sql connection query
+$dbh = new PDO(
+  $dsn,
+  $username,
+  $password,
+  array(
+      PDO::ATTR_EMULATE_PREPARES => false
+  )
+);
 
-  // STUB: convert sql database values to json
-  $sql = "SELECT `id`, `sku`, `name`, `price`, `dimension`, `unit`, `checked` FROM php_backend";
-  $result = mysqli_query($con, $sql);
+try {
+  $sql = 'SELECT `id`, `sku`, `name`, `price`, `dimension`, `unit`, `checked` FROM php_backend';
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute();
 
-  if ($result) {
-    header("Content-Type: JSON");
-    while ($row = mysqli_fetch_assoc($result)) {
-      $response[] = $row;
-    }
+  header("Content-Type: JSON");
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-    print_r(json_encode($response));
+    $response[] = $row;
   }
+  print_r(json_encode($response));
+
+} catch (PDOException $e) {
+  error_log($e->getMessage());
 }

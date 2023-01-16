@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ISingleProduct } from "../components/SingleProduct/ISingleProduct";
 import HomeDashboard from "../components/dashboards/HomeDashboard";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
-import { productListData } from "./mocks/mock";
-import { ISingleProduct } from "../components/SingleProduct/ISingleProduct";
+// import { productListData } from "./mocks/mock";
+
+// TODO: stopped here
+// add logic to mass delete btn
 
 const ProductList = () => {
   const [productList, setProductList] = useState<ISingleProduct[]>([]);
@@ -16,6 +19,8 @@ const ProductList = () => {
       .then((res) => setProductList(res.data))
       .catch((err) => console.log(err));
   }, [productList]);
+
+  const deleteUsers = () => {};
 
   return (
     <div>

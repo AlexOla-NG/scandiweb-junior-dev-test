@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ISingleProduct } from "./ISingleProduct";
 
 // TODO: stopped here
@@ -13,6 +13,12 @@ const SingleProduct = ({
   unit,
   checked,
 }: ISingleProduct) => {
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   // STUB: toggle output based on unit
   let output;
 
@@ -35,7 +41,8 @@ const SingleProduct = ({
       <input
         type="checkbox"
         className="delete-checkbox"
-        defaultChecked={checked}
+        checked={isChecked}
+        onChange={handleChange}
       />
       <p>{sku}</p>
       <p>

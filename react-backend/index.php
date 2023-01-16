@@ -43,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $dbh = new PDO($dsn, $username, $password);
 
   try {
-    $stmt = $dbh->prepare('INSERT INTO php_backend (sku, name, price, dimension, unit, checked) VALUES(:sku, :name, :price, :dimension, :unit, :checked)');
+    $sql = 'INSERT INTO php_backend (sku, name, price, dimension, unit, checked) VALUES(:sku, :name, :price, :dimension, :unit, :checked)';
+    $stmt = $dbh->prepare($sql);
     $stmt->execute([
       'sku' => $newProduct->getSKU(),
       'name' => $newProduct->getName(),

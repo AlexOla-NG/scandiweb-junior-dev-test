@@ -30,7 +30,7 @@ class Product {
   public function getUnit(): string {
     return $this->unit;
   }
-  public function getChecked(): string {
+  public function getChecked(): bool {
     return $this->checked;
   }
 
