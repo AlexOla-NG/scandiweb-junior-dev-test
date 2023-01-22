@@ -17,7 +17,6 @@ const Form = () => {
   };
 
   // STUB: handle form submission
-  // TODO: push formDataObj to backend on submit
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -27,9 +26,8 @@ const Form = () => {
 
     myFormData.forEach((value, key) => (formDataObj[key] = value));
 
-    console.log(formDataObj);
-
-    const url = "http://localhost/react-backend/index.php";
+    const url = "https://juniortest-alexander-oweka.000webhostapp.com/form.php";
+    // const url = "http://localhost/react-backend/form.php";
     axios
       .post(url, myFormData)
       .then((res) => {
@@ -42,12 +40,6 @@ const Form = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  // STUB: create custom error message on invalid input
-  // function applyValidation(this: HTMLInputElement) {
-  //   let msg = "Please, provide the data of indicated type";
-  //   this.setCustomValidity(msg);
-  // }
 
   let output;
   if (category === "DVD") {

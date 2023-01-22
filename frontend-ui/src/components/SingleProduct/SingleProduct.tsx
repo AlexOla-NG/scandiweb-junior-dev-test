@@ -1,10 +1,6 @@
 import React from "react";
 import { ISingleProduct } from "./ISingleProduct";
 
-// TODO: stopped here
-// fix the checkbox logic. toggling should affect the main database
-// this depends on backend completion
-
 interface ISingleProductComp extends ISingleProduct {
   handleToggle(id: number): void;
 }

@@ -7,6 +7,8 @@ session_start();
 require_once './Classes/DVD_Product.php';
 require_once './Classes/Furniture_Product.php';
 require_once './Classes/Book_Product.php';
+require_once 'connection.php';
+
 
 // STUB: when user submits form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -31,13 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $width = $_POST['width'];
     $newProduct = new Furniture_Product($sku, $name, $price, $height, $length, $width);
   }
-
-  // STUB: create sql connection params
-  $serverName = "localhost";
-  $username = "root";
-  $password = "";
-  $databaseName = "scandiweb_backend";
-  $dsn = 'mysql:dbname=scandiweb_backend;host=localhost';
 
   // STUB: create sql connection query
   $dbh = new PDO($dsn, $username, $password);

@@ -3,7 +3,7 @@
 // STUB: create abstract class that Book, DVD & furniture extends
 // class will have the following protected props: sku, name, price, unit, checked, 
 
-class Product {
+abstract class Product {
 
   protected bool $checked = false;
   protected string $unit;

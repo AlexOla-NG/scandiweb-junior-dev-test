@@ -23,8 +23,7 @@ class Furniture_Product extends Product
   // STUB: create getter
   public function getDimension(): string
   {
-    return $this->height . 'x' . $this->length . 'x' . $this->width;
-    // return "'$this->height'x'$this->length'x'$this->width'";
+    return $this->height . 'x' . $this->width . 'x' . $this->length;
   }
 
 }
