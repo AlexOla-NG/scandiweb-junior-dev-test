@@ -3,34 +3,42 @@
 // STUB: create abstract class that Book, DVD & furniture extends
 // class will have the following protected props: sku, name, price, unit, checked, 
 
-abstract class Product {
+abstract class Product
+{
 
-  protected bool $checked = false;
+  protected int $checked = 0;
   protected string $unit;
+  protected string $sku;
+  protected string $name;
+  protected string $price;
 
   // STUB: initialize props
-  public function __construct(
-  protected string $sku,
-  protected string $name,
-  protected string $price,
-  ) {
-
+  public function __construct($sku, $name, $price)
+  {
+    $this->sku = $sku;
+    $this->name = $name;
+    $this->price = $price;
   }
 
   // STUB: create getters
-  public function getSKU(): string {
+  public function getSKU(): string
+  {
     return $this->sku;
   }
-  public function getName(): string {
+  public function getName(): string
+  {
     return $this->name;
   }
-  public function getPrice(): string {
+  public function getPrice(): string
+  {
     return $this->price;
   }
-  public function getUnit(): string {
+  public function getUnit(): string
+  {
     return $this->unit;
   }
-  public function getChecked(): bool {
+  public function getChecked(): int
+  {
     return $this->checked;
   }
 

@@ -26,8 +26,8 @@ const Form = () => {
 
     myFormData.forEach((value, key) => (formDataObj[key] = value));
 
-    const url = "https://juniortest-alexander-oweka.000webhostapp.com/form.php";
-    // const url = "http://localhost/react-backend/form.php";
+    // const url = "https://juniortest-alexander-oweka.000webhostapp.com/form.php";
+    const url = "http://localhost/react-backend/form.php";
     axios
       .post(url, myFormData)
       .then((res) => {

@@ -6,16 +6,14 @@ require_once 'Product.php';
 class Book_Product extends Product
 {
   protected string $unit = 'kg';
+  protected string $weight;
 
-  public function __construct(
-    protected string $sku,
-    protected string $name,
-    protected string $price,
-    protected string $weight
-  )
+  public function __construct($sku, $name, $price, $weight)
   {
 
     parent::__construct($sku, $name, $price);
+
+    $this->weight = $weight;
 
   }
 

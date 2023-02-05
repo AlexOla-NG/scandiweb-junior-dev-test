@@ -13,8 +13,8 @@ const ProductList = () => {
 
   // STUB: load products
   const getProducts = async () => {
-    // const url = "http://localhost/react-backend/api.php";
-    const url = "https://juniortest-alexander-oweka.000webhostapp.com/api.php";
+    const url = "http://localhost/react-backend/api.php";
+    // const url = "https://juniortest-alexander-oweka.000webhostapp.com/api.php";
 
     axios
       .get(url)
@@ -41,9 +41,9 @@ const ProductList = () => {
   // filter out unchecked products,
   // get deleted product id, send to backend
   const deleteUsers = async () => {
-    // const url = "http://localhost/react-backend/delete.php";
-    const url =
-      "https://juniortest-alexander-oweka.000webhostapp.com/delete.php";
+    const url = "http://localhost/react-backend/delete.php";
+    // const url =
+    //   "https://juniortest-alexander-oweka.000webhostapp.com/delete.php";
     let dataObj = {};
 
     // STUB: filter out checked products
